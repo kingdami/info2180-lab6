@@ -8,7 +8,7 @@ function handle () {
 
 	
 	//var url = "request.php";
-	httpRequest.open("GET", "request.php?q=definition" + q, true);
+	httpRequest.open("GET", "request.php?q=" + q, true);
 	
 	httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -17,7 +17,7 @@ function handle () {
 			if(httpRequest.status == 200) {
 			response = httpRequest.responseText;
 			console.log(response);
-			alert(response);
+			document.getElementById("result").innerHTML = response;
 			}
 		}
   	};
